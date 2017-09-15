@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="didSubmit()">
+	<label>Name</label>
+	<input type="text" formControlName="name"/>
+	<br>
+	<label>Price</label>
+	<input type="number" formControlName="price" />
+	<button type="submit">Save</button>
+</form>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Description</th>
+	</tr>
+	<tr *ngFor="let product of products">
+		<td>{{product.name}}</td>
+		<td>{{product.price}}</td>
+		<td>{{product?.description}}</td>
+	</tr>
+</table>
